@@ -12,7 +12,7 @@ export default function Home() {
 	const username = getAuthenticatedUsername();
 
 	return (
-		<div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-pink-300 to-blue-300 p-4">
+		<div className="flex min-h-dvh items-center justify-center bg-gradient-to-b from-pink-300 to-blue-300 p-4">
 			<MotionWrapper>
 				<div className="w-full max-w-md space-y-8 text-center">
 					<h1 className="font-bold text-4xl text-blue-600 lg:text-5xl">
