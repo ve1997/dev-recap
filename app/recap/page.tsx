@@ -1,8 +1,13 @@
+import { auth } from "@/auth";
 import { MotionWrapper } from "../components/motion-wrapper";
 
 export const runtime = "edge";
 
-export default function Page() {
+export default async function Page() {
+	const session = await auth();
+	if (!session?.user) return null;
+	console.debug({ session });
+
 	return (
 		<MotionWrapper>
 			<div>
