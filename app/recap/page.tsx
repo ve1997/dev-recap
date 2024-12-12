@@ -1,5 +1,7 @@
 import { MotionWrapper } from "../components/motion-wrapper";
 
+export const runtime = "edge";
+
 export default function Page() {
 	return (
 		<MotionWrapper>
