@@ -8,6 +8,8 @@ function getAuthenticatedUsername() {
 	return "JohnDoe";
 }
 
+export const runtime = "edge";
+
 export default function Home() {
 	const username = getAuthenticatedUsername();
 
