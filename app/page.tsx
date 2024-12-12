@@ -1,17 +1,15 @@
+import { auth } from "@/auth";
 import { Button } from "@/components/ui/button";
 import GitHub from "@/public/github-mark-white.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { MotionWrapper } from "./components/motion-wrapper";
 
-function getAuthenticatedUsername() {
-	return "JohnDoe";
-}
-
 export const runtime = "edge";
 
-export default function Home() {
-	const username = getAuthenticatedUsername();
+export default async function Home() {
+	const session = await auth();
+	if (!session?.user) return null;
 
 	return (
 		<div className="flex min-h-dvh items-center justify-center bg-gradient-to-b from-pink-300 to-blue-300 p-4">
@@ -22,7 +20,7 @@ export default function Home() {
 					</h1>
 
 					<div className="space-y-3">
-						<p className="font-semibold text-2xl">Hi, {username}!</p>
+						<p className="font-semibold text-2xl">Hi, {session.user.name} !</p>
 						<p className="text-base text-gray-600 lg:text-lg">
 							1年間おつかれさまでした。よくがんばりました！
 						</p>
