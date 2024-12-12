@@ -1,7 +1,11 @@
+import { MotionWrapper } from "../components/motion-wrapper";
+
 export default function Page() {
 	return (
-		<div>
-			<h1>Recap</h1>
-		</div>
+		<MotionWrapper>
+			<div>
+				<h1>Recap</h1>
+			</div>
+		</MotionWrapper>
 	);
 }
