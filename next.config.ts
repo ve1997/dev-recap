@@ -7,6 +7,14 @@ const createConfig = async (): Promise<NextConfig> => {
 	}
 	const nextConfig: NextConfig = {
 		/* config options here */
+		images: {
+			remotePatterns: [
+				{
+					protocol: "https",
+					hostname: "github.com",
+				},
+			],
+		},
 	};
 
 	return nextConfig;
